@@ -3,6 +3,8 @@ import './App.css'
 
 function App() {
   const [text, setText] = useState('')
+  const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length
+  
   return (
     <div className="counter-page">
       <h1>Character Counter</h1>
@@ -12,6 +14,7 @@ function App() {
         placeholder="Type your text here..."
       />
       <p>Character Count: {text.length}</p>
+      <p>Word Count: {wordCount}</p>
     </div>
   )
 }
